@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useEffect, useState } from "react";
 import AddJobForm from "./components/AddJobForm";
 import JobList from "./components/JobList";
@@ -21,17 +22,18 @@ export default function App() {
       console.error("Error loading jobs", err);
     }
   };
-
-  // 🔁 Fetch all jobs on first render
   useEffect(() => {
-    fetchJobs();
-  }, []);
-
-  // 🔁 Refetch when status filter changes
+    fetchJobs(statusFilter);
+  }, []); // fetch once on initial mount
+  
   useEffect(() => {
-    fetchJobs();
+    if (statusFilter !== "All") {
+      fetchJobs(statusFilter);
+    } else {
+      fetchJobs();
+    }
   }, [statusFilter]);
-
+  
   const addJobToList = (job) => {
     setJobs((prev) => [job, ...prev]);
   };
