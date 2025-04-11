@@ -7,7 +7,7 @@ A fullstack application to help students track their job applications efficientl
 ## 🚀 Live Demo
 
 👉 **Frontend (Vercel):** https://job-tracker-59i8.vercel.app'
-👉 **Backend (Render):** https://job-tracker-0n6d.onrender.com/api/
+👉 **Backend (Render):** https://job-tracker-0n6d.onrender.com
 
 ---
 
